@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -29,4 +29,43 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.header {
+  position: fixed;
+  padding: 0 7.5% 0 7.5%;
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-top: 54px;
+}
+
+header .open {
+  float: right;
+  cursor: pointer;
+  margin-top: 54px;
+  vertical-align: top;
+  padding: 0 7.5% 0 7.5%;
+}
+
+.header--button {
+  background-color: transparent;
+  border: none;
+  color: blue;
+  font-family: 'FBQ', TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+  outline: none;
+  position: fixed;
+  padding: 0 7.5% 0 7.5%;
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-top: 54px;
+}
+
+.post {
+  margin: 0 auto;
+  background-color: blue;
+  width: 75%;
 }
