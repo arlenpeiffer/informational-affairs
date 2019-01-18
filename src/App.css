@@ -33,15 +33,16 @@
 
 .header-container {
   position: fixed;
+  top: 54px;
   padding: 0 7.5% 0 7.5%;
-  margin-top: 54px;
+  /* margin-top: 54px; */
 }
 
 .header-text {
   font-size: 40px;
-  line-height: 48px;
+  line-height: 50px;
   font-weight: bold;
-  letter-spacing: -1px;
+  letter-spacing: -2px;
   display: inline-block;
 }
 
@@ -55,4 +56,41 @@
 section {
   padding-top: 196px;
   padding-bottom: 72px;
+}
+
+
+/* Links */
+
+a:link {
+  color: white;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: pink;
+  text-decoration: none;
+}
+
+#folder-studio {
+  text-decoration: none;
+  border-bottom: 2px solid white;
+}
+
+#folder-studio:hover {
+  color: white;
+  border-bottom: 2px solid yellow;
+}
+
+u {
+  text-decoration: none;
+  border-bottom: 2px solid white;
+}
+
+U:hover {
+  border-bottom: 2px solid yellow;
 }
