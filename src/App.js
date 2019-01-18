@@ -33,7 +33,7 @@ class Header extends Component {
           {this.state.isVisible===false
             ? <div className="header-container">
                 <h1 className="header-text" onClick={this.handleToggleVisibility}>Informational Affairs</h1>
-                <h1 className="header-text" onClick={this.handleToggleVisibility}><a href="#">( ? )</a></h1>
+                <h1 className="header-text header-x" onClick={this.handleToggleVisibility}><a href="#">( ? )</a></h1>
               </div>
             : <div className="header-container">
                 <h1 className="header-text" onClick={this.handleToggleVisibility}><u>Informational Affairs</u> is an ever growing index of books collected by <a id="folder-studio" href="#">Folder Studio</a>. I'm copying the whole thing for practice. <a href="#">( x )</a></h1>

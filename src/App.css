@@ -35,6 +35,7 @@
   position: fixed;
   top: 54px;
   padding: 0 7.5% 0 7.5%;
+  width: 76%;
   /* margin-top: 54px; */
 }
 
@@ -44,6 +45,11 @@
   font-weight: bold;
   letter-spacing: -2px;
   display: inline-block;
+}
+
+.header-x {
+  position: absolute;
+  right: 0px;
 }
 
 .post {
