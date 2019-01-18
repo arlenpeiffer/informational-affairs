@@ -7,18 +7,11 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Post />
+        <Posts />
       </div>
     );
   }
 }
-
-const headerHidden = <h1 className="header">Informational Affairs</h1>;
-const headerShown = (
-  <h1 className="header">
-    Informational Affairs is an ever growing index of books collected by <a href="#">Folder Studio</a>. I'm copying the whole thing for practice.
-  </h1>
-);
 
 class Header extends Component {
   constructor(props) {
@@ -37,15 +30,29 @@ class Header extends Component {
     return (
       <header>
         <div>
-          {this.state.isVisible===false ? headerHidden : headerShown}
-        </div>
-        <div>
-          <h1 className="open" onClick={this.handleToggleVisibility}>
-            {this.state.isVisible===false ? '( ? )' : '( x )'}
-          </h1>
+          {this.state.isVisible===false
+            ? <div className="header-container">
+                <h1 className="header-text" onClick={this.handleToggleVisibility}>Informational Affairs</h1>
+                <h1 className="header-text" onClick={this.handleToggleVisibility}>( ? )</h1>
+              </div>
+            : <div className="header-container">
+                <h1 className="header-text" onClick={this.handleToggleVisibility}>Informational Affairs is an ever growing index of books collected by <a href="#">Folder Studio</a>. I'm copying the whole thing for practice. ( x )</h1>
+              </div>
+          }
         </div>
       </header>
     );
+  }
+}
+
+class Posts extends Component {
+  render() {
+    return (
+      <section>
+        <Post />
+        <Post />
+      </section>
+    )
   }
 }
 
@@ -53,7 +60,58 @@ class Post extends Component {
   render() {
     return (
       <div className="post">
-        <img src="/src/photos/01.jpg" />
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
       </div>
     );
   }

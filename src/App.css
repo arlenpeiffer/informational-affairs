@@ -31,41 +31,28 @@
   }
 } */
 
-.header {
+.header-container {
   position: fixed;
   padding: 0 7.5% 0 7.5%;
+  margin-top: 54px;
+}
+
+.header-text {
   font-size: 40px;
   line-height: 48px;
   font-weight: bold;
   letter-spacing: -1px;
-  margin-top: 54px;
-}
-
-header .open {
-  float: right;
-  cursor: pointer;
-  margin-top: 54px;
-  vertical-align: top;
-  padding: 0 7.5% 0 7.5%;
-}
-
-.header--button {
-  background-color: transparent;
-  border: none;
-  color: blue;
-  font-family: 'FBQ', TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
-  outline: none;
-  position: fixed;
-  padding: 0 7.5% 0 7.5%;
-  font-size: 40px;
-  line-height: 48px;
-  font-weight: bold;
-  letter-spacing: -1px;
-  margin-top: 54px;
+  display: inline-block;
 }
 
 .post {
-  margin: 0 auto;
+  margin: 0 auto 192px auto;
   background-color: blue;
   width: 75%;
+  padding: 196px auto 72px auto;
+}
+
+section {
+  padding-top: 196px;
+  padding-bottom: 72px;
 }
