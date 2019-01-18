@@ -30,7 +30,7 @@ class Header extends Component {
     return (
       <header>
         <div className="header-container">
-          <div className="header-container-2">
+          <div className="header-padding">
             {this.state.isVisible===false
               ? <div>
                   <h1 className="header-text" onClick={this.handleToggleVisibility}>Informational Affairs</h1>
