@@ -29,16 +29,18 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <div>
-          {this.state.isVisible===false
-            ? <div className="header-container">
-                <h1 className="header-text" onClick={this.handleToggleVisibility}>Informational Affairs</h1>
-                <h1 className="header-text header-x" onClick={this.handleToggleVisibility}><a href="#">( ? )</a></h1>
-              </div>
-            : <div className="header-container">
-                <h1 className="header-text" onClick={this.handleToggleVisibility}><u>Informational Affairs</u> is an ever growing index of books collected by <a id="folder-studio" href="#">Folder Studio</a>. I'm copying the whole thing for practice. <a href="#">( x )</a></h1>
-              </div>
-          }
+        <div className="header-container">
+          <div className="header-container-2">
+            {this.state.isVisible===false
+              ? <div>
+                  <h1 className="header-text" onClick={this.handleToggleVisibility}>Informational Affairs</h1>
+                  <h1 className="header-text header-x" onClick={this.handleToggleVisibility}><span className="fake-link">( ? )</span></h1>
+                </div>
+              : <div>
+                  <h1 className="header-text" onClick={this.handleToggleVisibility}><u>Informational Affairs</u> is an ever growing index of books collected by <u>Folder Studio</u>. I'm copying the whole thing for practice. <span className="fake-link">( x )</span></h1>
+                </div>
+            }
+          </div>
         </div>
       </header>
     );

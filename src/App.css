@@ -34,9 +34,13 @@
 .header-container {
   position: fixed;
   top: 54px;
-  padding: 0 7.5% 0 7.5%;
-  width: 76%;
+  /* padding: 0 7.5% 0 7.5%; */
+  width: 100%;
   /* margin-top: 54px; */
+}
+
+.header-container-2 {
+  padding: 0 7.5%;
 }
 
 .header-text {
@@ -48,8 +52,7 @@
 }
 
 .header-x {
-  position: absolute;
-  right: 0px;
+  float: right;
 }
 
 .post {
@@ -97,6 +100,10 @@ u {
   border-bottom: 2px solid white;
 }
 
-U:hover {
+u:hover {
   border-bottom: 2px solid yellow;
+}
+
+.fake-link:hover {
+  color: pink;
 }
