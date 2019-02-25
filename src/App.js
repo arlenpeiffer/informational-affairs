@@ -92,16 +92,10 @@ function Post(props) {
         <div className="info">
           <a href="#">{props.id}. <span className="title">{props.title}</span>. {props.publisher}, {props.year}.</a>
         </div>
-        <div className="tags">
-          {props.tags.map((tag, index) => {
-            if (index !== props.tags.length - 1) {
-              return <p className="tag"><a href='#'>{tag}</a>, </p>
-            } else {
-              return <p className="tag">{tag}</p>
-            }
-          }
+        <ul className="tags">
+          {props.tags.map((tag, index) => <li><a href="#">{tag}</a></li>
           )}
-        </div>
+        </ul>
       </div>
     </div>
   );

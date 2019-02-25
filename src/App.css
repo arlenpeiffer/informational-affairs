@@ -66,7 +66,7 @@
 }
 
 .info {
-  max-width: 40%;
+  max-width: 60%;
 }
 
 .info a {
@@ -80,13 +80,19 @@
 }
 
 .tags {
-  max-width: 40%;
+  max-width: 30%;
+  padding: 0;
+  margin: 0;
 }
 
-.tag {
+.tags li {
   display: inline;
   font-size: 20px;
   line-height: 28px;
+}
+
+.tags li:not(:last-child):after {
+  content: ', '
 }
 
 section {
