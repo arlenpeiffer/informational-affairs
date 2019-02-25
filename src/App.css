@@ -55,9 +55,38 @@
 
 .post {
   margin: 0 auto 192px auto;
-  background-color: blue;
+  /* background-color: blue; */
   width: 75%;
   padding: 196px auto 72px auto;
+}
+
+.text {
+  display: flex;
+  justify-content: space-between
+}
+
+.info {
+  max-width: 40%;
+}
+
+.info a {
+  display: inline;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.title {
+  text-decoration: underline;
+}
+
+.tags {
+  max-width: 40%;
+}
+
+.tag {
+  display: inline;
+  font-size: 20px;
+  line-height: 28px;
 }
 
 section {
