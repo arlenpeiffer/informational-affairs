@@ -10,6 +10,18 @@ import img252_01 from './images/252/252-01.jpg';
 import img252_02 from './images/252/252-02.jpg';
 import img252_03 from './images/252/252-03.jpg';
 import img252_04 from './images/252/252-04.jpg';
+import img250_01 from './images/250/250-01.jpg';
+import img250_02 from './images/250/250-02.jpg';
+import img250_03 from './images/250/250-03.jpg';
+import img250_04 from './images/250/250-04.jpg';
+import img249_01 from './images/249/249-01.jpg';
+import img249_02 from './images/249/249-02.jpg';
+import img249_03 from './images/249/249-03.jpg';
+import img249_04 from './images/249/249-04.jpg';
+import img249_05 from './images/249/249-05.jpg';
+import img249_06 from './images/249/249-06.jpg';
+import img247_01 from './images/247/247-01.jpg';
+
 
 
 const archive = [
@@ -30,6 +42,33 @@ const archive = [
     publisher: "California: JTNPA",
     tags: ['brochure', '2002', 'wildflowers', 'joshua tree', 'national park', 'mojave', 'desert', 'spreads', 'typography', 'photography'],
   },
+  {
+    images: [img250_01, img250_02, img250_03, img250_04],
+    id: 250,
+    year: 1982,
+    author: "Riehl, Rüdiger.",
+    title: "Aquarium Atlas",
+    publisher: "West Germany: Hans A. Baensch",
+    tags: ['book', '1982', 'fish', 'aquarium', 'hardcover', 'cover', 'spreads', 'photography'],
+  },
+  {
+    images: [img249_01, img249_02, img249_03, img249_04, img249_05, img249_06],
+    id: 249,
+    year: 1984,
+    author: "Chatani, Masahiro.",
+    title: "Pattern Sheets of Origamic Architecture",
+    publisher: "Tokyo: Shokokusha",
+    tags: ['book', '1984', 'origami', 'architecture', 'cover', 'spreads', 'linework'],
+  },
+  {
+    images: [img247_01],
+    id: 247,
+    year: 1984,
+    author: "ノンノ・モア・ブックス.",
+    title: "NON・NO クッキング・ブック PART 2: お弁当とおそうざいの本",
+    publisher: "東京: 集英社",
+    tags: ['magazine', '1984', 'cooking', 'bento', 'softcover', 'cover', 'spreads', 'photography'],
+  }
 ]
 
 class App extends Component {
