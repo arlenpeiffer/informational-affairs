@@ -33,11 +33,26 @@ const archive = [
 ]
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClickOnPostTitle = this.handleClickOnPostTitle.bind(this);
+    this.state = {
+      archive: archive,
+    };
+  }
+  handleClickOnPostTitle = id => {
+    this.setState({
+      archive: this.state.archive.filter((post) => post.id === id),
+    });
+  }
   render() {
     return (
       <div>
         <Header />
-        <Posts archive={archive} />
+        <Posts 
+          archive={this.state.archive}
+          handleClickOnPostTitle={this.handleClickOnPostTitle}
+        />
       </div>
     );
   }
@@ -67,7 +82,7 @@ class Header extends Component {
                   <h1 className="header-text header-x" onClick={this.handleToggleVisibility}><span className="fake-link">( ? )</span></h1>
                 </div>
               : <div>
-                  <h1 className="header-text" onClick={this.handleToggleVisibility}><u>Informational Affairs</u> is an ever growing index of books collected by <u>Folder Studio</u>. I'm copying the whole thing for practice. <span className="fake-link">( x )</span></h1>
+                  <h1 className="header-text"><u>Informational Affairs</u> is an ever growing index of books collected by <u>Folder Studio</u>. I'm copying the whole thing for practice. <span className="fake-link" onClick={this.handleToggleVisibility}>( x )</span></h1>
                 </div>
             }
           </div>
@@ -89,6 +104,7 @@ function Posts(props) {
           title={post.title}
           publisher={post.publisher}
           tags={post.tags}
+          handleClickOnPostTitle={props.handleClickOnPostTitle}
         />
       )}
     </section>
@@ -103,7 +119,7 @@ function Post(props) {
       </div>
       <div className="text">
         <div className="info">
-          <a href="#">{props.id}. {props.author} <u>{props.title}</u>. {props.publisher}, {props.year}.</a>
+          <a href="#" onClick={() => {props.handleClickOnPostTitle(props.id)}}>{props.id}. {props.author} <u>{props.title}</u>. {props.publisher}, {props.year}.</a>
         </div>
         <ul className="tags">
           {props.tags.map((tag, index) => <li><a href="#">{tag}</a></li>
