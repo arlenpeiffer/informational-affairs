@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import img253_01 from './photos/01.jpg';
-import img253_02 from './photos/02.jpg';
-import img253_03 from './photos/03.jpg';
-import img253_04 from './photos/04.jpg';
-import img253_05 from './photos/05.jpg';
-
+import img253_01 from './images/253/253-01.jpg';
+import img253_02 from './images/253/253-02.jpg';
+import img253_03 from './images/253/253-03.jpg';
+import img253_04 from './images/253/253-04.jpg';
+import img253_05 from './images/253/253-05.jpg';
+import img252_01 from './images/252/252-01.jpg';
+import img252_02 from './images/252/252-02.jpg';
+import img252_03 from './images/252/252-03.jpg';
+import img252_04 from './images/252/252-04.jpg';
 
 
 const archive = [
@@ -17,6 +20,15 @@ const archive = [
     title: "ぎんざ1982",
     publisher: "東京: 日本リクルートセンター",
     tags: ['book', '1982', 'japan', 'tokyo', 'hardcover', 'spreads', 'cover', 'photography', 'ginza'],
+  },
+  {
+    images: [img252_01, img252_02, img252_03, img252_04],
+    id: 252,
+    year: 2002,
+    author: "Joshua Tree National Park Association.",
+    title: "Wildflowers of Joshua Tree National Park",
+    publisher: "California: JTNPA",
+    tags: ['brochure', '2002', 'wildflowers', 'joshua tree', 'national park', 'mojave', 'desert', 'spreads', 'typography', 'photography'],
   },
 ]
 
@@ -73,6 +85,7 @@ function Posts(props) {
           images={post.images}
           id={post.id}
           year={post.year}
+          author={post.author}
           title={post.title}
           publisher={post.publisher}
           tags={post.tags}
@@ -90,7 +103,7 @@ function Post(props) {
       </div>
       <div className="text">
         <div className="info">
-          <a href="#">{props.id}. <u>{props.title}</u>. {props.publisher}, {props.year}.</a>
+          <a href="#">{props.id}. {props.author} <u>{props.title}</u>. {props.publisher}, {props.year}.</a>
         </div>
         <ul className="tags">
           {props.tags.map((tag, index) => <li><a href="#">{tag}</a></li>
