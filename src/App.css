@@ -69,6 +69,10 @@ article {
   margin: 0 auto ;
 }
 
+.images:hover {
+  cursor: s-resize;
+}
+
 .images img {
   width: 100%;
   margin-bottom: -4px;
