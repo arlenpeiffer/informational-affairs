@@ -37,6 +37,7 @@ class App extends Component {
     super(props);
     this.handleToggleVisibility = this.handleToggleVisibility.bind(this);
     this.handleClickOnPostTitle = this.handleClickOnPostTitle.bind(this);
+    this.handleClickOnTag = this.handleClickOnTag.bind(this);
     this.handleReturnToFullArchive = this.handleReturnToFullArchive.bind(this);
     this.state = {
       archive: archive,
@@ -55,6 +56,11 @@ class App extends Component {
       archive: this.state.archive.filter((post) => post.id === id),
     });
   }
+  handleClickOnTag = tag => {
+    this.setState({
+      archive: archive.filter((post) => post.tags.includes(tag)),
+    });
+  }
   handleReturnToFullArchive() {
     this.setState({ archive: archive });
   }
@@ -69,6 +75,7 @@ class App extends Component {
         <Posts 
           archive={this.state.archive}
           handleClickOnPostTitle={this.handleClickOnPostTitle}
+          handleClickOnTag={this.handleClickOnTag}
         />
       </div>
     );
@@ -82,11 +89,11 @@ function Header(props) {
         <div className="header-padding">
           {props.isVisible===false
             ? <div>
-                <h1 className="header-text" onClick={props.handleReturnToFullArchive}>Informational Affairs</h1>
+                <h1 className="header-text" onClick={props.handleReturnToFullArchive}><span className="fake-link">Informational Affairs</span></h1>
                 <h1 className="header-text header-x" onClick={props.handleToggleVisibility}><span className="fake-link">( ? )</span></h1>
               </div>
             : <div>
-                <h1 className="header-text"><u>Informational Affairs</u> is an ever growing index of books collected by <u>Folder Studio</u>. I'm copying the whole thing for practice. <span className="fake-link" onClick={props.handleToggleVisibility}>( x )</span></h1>
+                <h1 className="header-text"><u onClick={props.handleToggleVisibility}>Informational Affairs</u> is an ever growing index of books collected by <u>Folder Studio</u>. I'm copying the whole thing for practice. <span className="fake-link" onClick={props.handleToggleVisibility}>( x )</span></h1>
               </div>
           }
         </div>
@@ -109,6 +116,7 @@ function Posts(props) {
           publisher={post.publisher}
           tags={post.tags}
           handleClickOnPostTitle={props.handleClickOnPostTitle}
+          handleClickOnTag={props.handleClickOnTag}
         />
       )}
     </section>
@@ -126,7 +134,7 @@ function Post(props) {
           <a href="#" onClick={() => {props.handleClickOnPostTitle(props.id)}}>{props.id}. {props.author} <u>{props.title}</u>. {props.publisher}, {props.year}.</a>
         </div>
         <ul className="tags">
-          {props.tags.map((tag, index) => <li><a href="#">{tag}</a></li>
+          {props.tags.map((tag, index) => <li><a href="#" onClick={() => props.handleClickOnTag(tag)}>{tag}</a></li>
           )}
         </ul>
       </div>
