@@ -84,20 +84,20 @@ function Posts(props) {
 
 function Post(props) {
   return (
-    <div className="post">
-      <div>
-        {props.images.map((image) => <img src={image} width="100%" />)}
+    <article>
+      <div className="images">
+        {props.images.map((image) => <img src={image} />)}
       </div>
       <div className="text">
         <div className="info">
-          <a href="#">{props.id}. <span className="title">{props.title}</span>. {props.publisher}, {props.year}.</a>
+          <a href="#">{props.id}. <u>{props.title}</u>. {props.publisher}, {props.year}.</a>
         </div>
         <ul className="tags">
           {props.tags.map((tag, index) => <li><a href="#">{tag}</a></li>
           )}
         </ul>
       </div>
-    </div>
+    </article>
   );
 }
 
