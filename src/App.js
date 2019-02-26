@@ -35,20 +35,37 @@ const archive = [
 class App extends Component {
   constructor(props) {
     super(props);
+    this.handleToggleVisibility = this.handleToggleVisibility.bind(this);
     this.handleClickOnPostTitle = this.handleClickOnPostTitle.bind(this);
+    this.handleReturnToFullArchive = this.handleReturnToFullArchive.bind(this);
     this.state = {
       archive: archive,
+      isVisible: false
     };
+  }
+  handleToggleVisibility() {
+    this.setState((prevState) => {
+      return {
+        isVisible: !prevState.isVisible
+      };
+    });
   }
   handleClickOnPostTitle = id => {
     this.setState({
       archive: this.state.archive.filter((post) => post.id === id),
     });
   }
+  handleReturnToFullArchive() {
+    this.setState({ archive: archive });
+  }
   render() {
     return (
       <div>
-        <Header />
+        <Header
+          isVisible={this.state.isVisible}
+          handleToggleVisibility={this.handleToggleVisibility}
+          handleReturnToFullArchive={this.handleReturnToFullArchive}
+        />
         <Posts 
           archive={this.state.archive}
           handleClickOnPostTitle={this.handleClickOnPostTitle}
@@ -58,39 +75,26 @@ class App extends Component {
   }
 }
 
-class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.handleToggleVisibility = this.handleToggleVisibility.bind(this);
-    this.state = {isVisible: false}
-  }
-  handleToggleVisibility() {
-    this.setState((prevState) => {
-      return {
-        isVisible: !prevState.isVisible
-      };
-    });
-  }
-  render() {
-    return (
-      <header>
-        <div className="header-container">
-          <div className="header-padding">
-            {this.state.isVisible===false
-              ? <div>
-                  <h1 className="header-text" onClick={this.handleToggleVisibility}>Informational Affairs</h1>
-                  <h1 className="header-text header-x" onClick={this.handleToggleVisibility}><span className="fake-link">( ? )</span></h1>
-                </div>
-              : <div>
-                  <h1 className="header-text"><u>Informational Affairs</u> is an ever growing index of books collected by <u>Folder Studio</u>. I'm copying the whole thing for practice. <span className="fake-link" onClick={this.handleToggleVisibility}>( x )</span></h1>
-                </div>
-            }
-          </div>
+function Header(props) {
+  return (
+    <header>
+      <div className="header-container">
+        <div className="header-padding">
+          {props.isVisible===false
+            ? <div>
+                <h1 className="header-text" onClick={props.handleReturnToFullArchive}>Informational Affairs</h1>
+                <h1 className="header-text header-x" onClick={props.handleToggleVisibility}><span className="fake-link">( ? )</span></h1>
+              </div>
+            : <div>
+                <h1 className="header-text"><u>Informational Affairs</u> is an ever growing index of books collected by <u>Folder Studio</u>. I'm copying the whole thing for practice. <span className="fake-link" onClick={props.handleToggleVisibility}>( x )</span></h1>
+              </div>
+          }
         </div>
-      </header>
-    );
-  }
+      </div>
+    </header>
+  );
 }
+
 
 function Posts(props) {
   return (
