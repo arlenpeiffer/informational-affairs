@@ -1,5 +1,5 @@
 import React from "react";
-import archive from "./archive";
+import archive from "../archive";
 import Post from "./Post";
 
 class Posts extends React.Component {

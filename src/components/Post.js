@@ -1,5 +1,5 @@
 import React from "react";
-import archive from "./archive";
+import archive from "../archive";
 
 function Post(props) {
   const post = archive.find(post => post.id === props.id);
