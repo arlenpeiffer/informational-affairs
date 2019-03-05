@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Header from "./Header";
 import Images from "./images/index";
 import "./App.css";
 
@@ -122,21 +123,12 @@ const archive = [
 class App extends Component {
   constructor(props) {
     super(props);
-    this.handleToggleVisibility = this.handleToggleVisibility.bind(this);
     this.handleClickOnPostTitle = this.handleClickOnPostTitle.bind(this);
     this.handleClickOnTag = this.handleClickOnTag.bind(this);
     this.handleReturnToFullArchive = this.handleReturnToFullArchive.bind(this);
     this.state = {
-      archive: archive,
-      isVisible: false
+      archive: archive
     };
-  }
-  handleToggleVisibility() {
-    this.setState(prevState => {
-      return {
-        isVisible: !prevState.isVisible
-      };
-    });
   }
   handleClickOnPostTitle = id => {
     this.setState({
@@ -154,11 +146,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header
-          isVisible={this.state.isVisible}
-          handleToggleVisibility={this.handleToggleVisibility}
-          handleReturnToFullArchive={this.handleReturnToFullArchive}
-        />
+        <Header handleReturnToFullArchive={this.handleReturnToFullArchive} />
         <Posts
           archive={this.state.archive}
           handleClickOnPostTitle={this.handleClickOnPostTitle}
@@ -167,49 +155,6 @@ class App extends Component {
       </div>
     );
   }
-}
-
-function Header(props) {
-  return (
-    <header>
-      <div className="header-container">
-        <div className="header-padding">
-          {props.isVisible === false ? (
-            <div>
-              <h1
-                className="header-text"
-                onClick={props.handleReturnToFullArchive}
-              >
-                <span className="fake-link">Informational Affairs</span>
-              </h1>
-              <h1
-                className="header-text header-x"
-                onClick={props.handleToggleVisibility}
-              >
-                <span className="fake-link">( ? )</span>
-              </h1>
-            </div>
-          ) : (
-            <div>
-              <h1 className="header-text">
-                <u onClick={props.handleToggleVisibility}>
-                  Informational Affairs
-                </u>{" "}
-                is an ever growing index of books collected by{" "}
-                <u>Folder Studio</u>. I'm copying the whole thing for practice.{" "}
-                <span
-                  className="fake-link"
-                  onClick={props.handleToggleVisibility}
-                >
-                  ( x )
-                </span>
-              </h1>
-            </div>
-          )}
-        </div>
-      </div>
-    </header>
-  );
 }
 
 function Posts(props) {
