@@ -1,10 +1,12 @@
 import React from "react";
+import archive from "./archive";
 
 function Post(props) {
+  const post = archive.find(post => post.id === props.id);
   return (
     <article>
       <div className="images">
-        {props.images.map(image => (
+        {post.images.map(image => (
           <img src={image} />
         ))}
       </div>
@@ -13,17 +15,20 @@ function Post(props) {
           <a
             href="#"
             onClick={() => {
-              props.handleClickOnPostTitle(props.id);
+              props.onClick(post => post.id === props.id);
             }}
           >
-            {props.id}. {props.author} <u>{props.title}</u>. {props.publisher},{" "}
-            {props.year}.
+            {post.id}. {post.author} <u>{post.title}</u>. {post.publisher},{" "}
+            {post.year}.
           </a>
         </div>
         <ul className="tags">
-          {props.tags.map((tag, index) => (
+          {post.tags.map(tag => (
             <li>
-              <a href="#" onClick={() => props.handleClickOnTag(tag)}>
+              <a
+                href="#"
+                onClick={() => props.onClick(post => post.tags.includes(tag))}
+              >
                 {tag}
               </a>
             </li>

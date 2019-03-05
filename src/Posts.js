@@ -5,38 +5,29 @@ import Post from "./Post";
 class Posts extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClickOnPostTitle = this.handleClickOnPostTitle.bind(this);
-    this.handleClickOnTag = this.handleClickOnTag.bind(this);
+    this.onClick = this.onClick.bind(this);
     this.state = {
       archive
     };
   }
-  handleClickOnPostTitle = id => {
-    this.setState({
-      archive: this.state.archive.filter(post => post.id === id)
-    });
-  };
-  handleClickOnTag = tag => {
-    this.setState({
-      archive: archive.filter(post => post.tags.includes(tag))
-    });
+  onClick = filterBy => {
+    this.setState({ archive: archive.filter(filterBy) });
   };
   render() {
     return (
       <section>
-        {this.state.archive.map((post, index, array) => (
-          <Post
-            images={post.images}
-            id={post.id}
-            year={post.year}
-            author={post.author}
-            title={post.title}
-            publisher={post.publisher}
-            tags={post.tags}
-            handleClickOnPostTitle={this.handleClickOnPostTitle}
-            handleClickOnTag={this.handleClickOnTag}
-          />
+        {this.state.archive.map(post => (
+          <Post id={post.id} onClick={this.onClick} />
         ))}
+        {this.state.archive.length !== archive.length && (
+          <p
+            onClick={() => {
+              this.onClick(archive => archive);
+            }}
+          >
+            return to full archive
+          </p>
+        )}
       </section>
     );
   }
