@@ -14,12 +14,15 @@ class Posts extends React.Component {
     this.setState({ archive: archive.filter(filterBy) });
   };
   render() {
+    const archiveLength = archive.length;
+    const currentLength = this.state.archive.length;
+
     return (
       <section>
         {this.state.archive.map(post => (
           <Post id={post.id} onClick={this.onClick} />
         ))}
-        {this.state.archive.length !== archive.length && (
+        {currentLength !== archiveLength && (
           <p
             onClick={() => {
               this.onClick(archive => archive);
