@@ -1,36 +1,4 @@
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
+/* HEADER */
 .header-container {
   position: fixed;
   top: 54px;
@@ -49,24 +17,59 @@
   display: inline-block;
 }
 
+.header-title:hover {
+  color: pink;
+  cursor: default;
+}
+
 .header-x {
   float: right;
   cursor: pointer;
 }
 
+.header-text u {
+  text-decoration: none;
+  border-bottom: 2px solid white;
+}
+
+.header-text u:hover {
+  border-bottom: 2px solid yellow;
+  cursor: pointer;
+}
+
+/* POSTS */
 section {
   padding-top: 196px;
   padding-bottom: 72px;
 }
 
+.return {
+  text-align: center;
+}
+
+.return a {
+  font-size: 20px;
+}
+
+/* POST */
 article {
   margin: 0 auto 192px auto;
   padding: 196px auto 72px auto;
 }
 
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+/* POST: Images */
 .images {
   width: 75%;
-  margin: 0 auto ;
+  margin: 0 auto;
 }
 
 .images:hover {
@@ -78,17 +81,30 @@ article {
   margin-bottom: -4px;
 }
 
-.text {
+/* POST: Information */
+.information-container {
   display: flex;
   justify-content: space-between;
   margin-top: 34px;
   padding: 0 6% 0 8%;
 }
 
-.info {
+.information {
   width: 60%;
 }
 
+.information a {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.information u {
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid;
+}
+
+/* POST: Tags */
 .tags {
   margin: 0;
   padding: 0;
@@ -102,63 +118,27 @@ article {
 }
 
 .tags li:not(:last-child):after {
-  content: ', '
+  content: ", ";
 }
 
-
-/* Links */
-
-a:link {
-  color: white;
-  text-decoration: none;
+/* COLORS */
+.yellow:hover a {
+  color: #fec800;
 }
 
-a:visited {
-  color: white;
-  text-decoration: none;
+.purple:hover a {
+  color: #522087;
 }
 
-a:hover {
-  color: pink;
-  text-decoration: none;
+.red:hover a {
+  color: #d11215;
 }
 
-#folder-studio {
-  text-decoration: none;
-  border-bottom: 2px solid white;
+.blue:hover a {
+  color: #1daafc;
 }
 
-#folder-studio:hover {
-  color: white;
-  border-bottom: 2px solid yellow;
-}
-
-.header-text u {
-  text-decoration: none;
-  border-bottom: 2px solid white;
-}
-
-.header-text u:hover {
-  border-bottom: 2px solid yellow;
-  cursor: pointer;
-}
-
-.info a {
-  font-size: 20px;
-  line-height: 28px;
-}
-
-.info a:hover {
-  color: pink;
-}
-
-.info u {
-  text-decoration: none;
-  padding-bottom: 2px;
-  border-bottom: 2px solid;
-}
-
-.fake-link:hover {
+.pink:hover {
   color: pink;
   cursor: pointer;
 }

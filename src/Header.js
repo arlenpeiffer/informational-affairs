@@ -27,27 +27,21 @@ class Header extends React.Component {
                   is an ever growing index of books collected by{" "}
                   <u>Folder Studio</u>. I'm copying the whole thing for
                   practice.{" "}
-                  <span
-                    className="fake-link"
-                    onClick={this.handleToggleVisibility}
-                  >
+                  <span className="pink" onClick={this.handleToggleVisibility}>
                     ( x )
                   </span>
                 </h1>
               </div>
             ) : (
               <div>
-                <h1
-                  className="header-text"
-                  onClick={this.props.handleReturnToFullArchive}
-                >
-                  <span className="fake-link">Informational Affairs</span>
+                <h1 className="header-text">
+                  <span className="header-title">Informational Affairs</span>
                 </h1>
                 <h1
                   className="header-text header-x"
                   onClick={this.handleToggleVisibility}
                 >
-                  <span className="fake-link">( ? )</span>
+                  <span className="pink">( ? )</span>
                 </h1>
               </div>
             )}

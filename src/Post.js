@@ -10,8 +10,8 @@ function Post(props) {
           <img src={image} />
         ))}
       </div>
-      <div className="text">
-        <div className="info">
+      <div className="information-container">
+        <div className={"information " + post.color}>
           <a
             href="#"
             onClick={() => {
@@ -24,7 +24,7 @@ function Post(props) {
         </div>
         <ul className="tags">
           {post.tags.map(tag => (
-            <li>
+            <li className={post.color}>
               <a
                 href="#"
                 onClick={() => props.onClick(post => post.tags.includes(tag))}

@@ -13,6 +13,7 @@ const archive = [
     year: 1982,
     title: "ぎんざ1982",
     publisher: "東京: 日本リクルートセンター",
+    color: "yellow",
     tags: [
       "book",
       "1982",
@@ -37,6 +38,7 @@ const archive = [
     author: "Joshua Tree National Park Association.",
     title: "Wildflowers of Joshua Tree National Park",
     publisher: "California: JTNPA",
+    color: "purple",
     tags: [
       "brochure",
       "2002",
@@ -62,6 +64,7 @@ const archive = [
     author: "Riehl, Rüdiger.",
     title: "Aquarium Atlas",
     publisher: "West Germany: Hans A. Baensch",
+    color: "red",
     tags: [
       "book",
       "1982",
@@ -87,6 +90,7 @@ const archive = [
     author: "Chatani, Masahiro.",
     title: "Pattern Sheets of Origamic Architecture",
     publisher: "Tokyo: Shokokusha",
+    color: "blue",
     tags: [
       "book",
       "1984",
@@ -104,6 +108,7 @@ const archive = [
     author: "ノンノ・モア・ブックス.",
     title: "NON・NO クッキング・ブック PART 2: お弁当とおそうざいの本",
     publisher: "東京: 集英社",
+    color: "yellow",
     tags: [
       "magazine",
       "1984",

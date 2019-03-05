@@ -23,13 +23,16 @@ class Posts extends React.Component {
           <Post id={post.id} onClick={this.onClick} />
         ))}
         {currentLength !== archiveLength && (
-          <p
-            onClick={() => {
-              this.onClick(archive => archive);
-            }}
-          >
-            return to full archive
-          </p>
+          <div className="return">
+            <a
+              className="pink"
+              onClick={() => {
+                this.onClick(archive => archive);
+              }}
+            >
+              return to full archive
+            </a>
+          </div>
         )}
       </section>
     );
