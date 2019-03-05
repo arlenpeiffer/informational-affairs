@@ -1,29 +1,16 @@
 import React, { Component } from "react";
+import Images from "./images/index";
 import "./App.css";
-import img253_01 from "./images/253/253-01.jpg";
-import img253_02 from "./images/253/253-02.jpg";
-import img253_03 from "./images/253/253-03.jpg";
-import img253_04 from "./images/253/253-04.jpg";
-import img253_05 from "./images/253/253-05.jpg";
-import img252_01 from "./images/252/252-01.jpg";
-import img252_02 from "./images/252/252-02.jpg";
-import img252_03 from "./images/252/252-03.jpg";
-import img252_04 from "./images/252/252-04.jpg";
-import img250_01 from "./images/250/250-01.jpg";
-import img250_02 from "./images/250/250-02.jpg";
-import img250_03 from "./images/250/250-03.jpg";
-import img250_04 from "./images/250/250-04.jpg";
-import img249_01 from "./images/249/249-01.jpg";
-import img249_02 from "./images/249/249-02.jpg";
-import img249_03 from "./images/249/249-03.jpg";
-import img249_04 from "./images/249/249-04.jpg";
-import img249_05 from "./images/249/249-05.jpg";
-import img249_06 from "./images/249/249-06.jpg";
-import img247_01 from "./images/247/247-01.jpg";
 
 const archive = [
   {
-    images: [img253_01, img253_02, img253_03, img253_04, img253_05],
+    images: [
+      Images.img253_01,
+      Images.img253_02,
+      Images.img253_03,
+      Images.img253_04,
+      Images.img253_05
+    ],
     id: 253,
     year: 1982,
     title: "ぎんざ1982",
@@ -41,7 +28,12 @@ const archive = [
     ]
   },
   {
-    images: [img252_01, img252_02, img252_03, img252_04],
+    images: [
+      Images.img252_01,
+      Images.img252_02,
+      Images.img252_03,
+      Images.img252_04
+    ],
     id: 252,
     year: 2002,
     author: "Joshua Tree National Park Association.",
@@ -61,7 +53,12 @@ const archive = [
     ]
   },
   {
-    images: [img250_01, img250_02, img250_03, img250_04],
+    images: [
+      Images.img250_01,
+      Images.img250_02,
+      Images.img250_03,
+      Images.img250_04
+    ],
     id: 250,
     year: 1982,
     author: "Riehl, Rüdiger.",
@@ -79,7 +76,14 @@ const archive = [
     ]
   },
   {
-    images: [img249_01, img249_02, img249_03, img249_04, img249_05, img249_06],
+    images: [
+      Images.img249_01,
+      Images.img249_02,
+      Images.img249_03,
+      Images.img249_04,
+      Images.img249_05,
+      Images.img249_06
+    ],
     id: 249,
     year: 1984,
     author: "Chatani, Masahiro.",
@@ -96,7 +100,7 @@ const archive = [
     ]
   },
   {
-    images: [img247_01],
+    images: [Images.img247_01],
     id: 247,
     year: 1984,
     author: "ノンノ・モア・ブックス.",
