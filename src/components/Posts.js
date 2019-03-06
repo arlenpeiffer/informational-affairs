@@ -16,6 +16,7 @@ class Posts extends React.Component {
   render() {
     const archiveLength = archive.length;
     const currentLength = this.state.archive.length;
+    const lastPost = this.state.archive[currentLength - 1];
 
     return (
       <section>
@@ -23,9 +24,8 @@ class Posts extends React.Component {
           <Post id={post.id} onClick={this.onClick} />
         ))}
         {currentLength !== archiveLength && (
-          <div className="return">
+          <div className={"return " + lastPost.color}>
             <a
-              className="pink"
               onClick={() => {
                 this.onClick(archive => archive);
               }}

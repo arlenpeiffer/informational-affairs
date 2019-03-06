@@ -66,6 +66,10 @@ a:visited {
   text-decoration: none;
 }
 
+a:hover {
+  cursor: pointer;
+}
+
 /* POST: Images */
 .images {
   width: 75%;
